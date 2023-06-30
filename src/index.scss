@@ -1,0 +1,112 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.87);
+  --primary: #40817a;
+  --secondary: #141414;
+  --tertiary: #e5e7eb;
+  --error: rgba(138, 40, 84, 1);
+  --primary-gradient: linear-gradient(
+    90deg,
+    rgba(14, 62, 57, 0.7007002630153624) 0%,
+    rgba(64, 129, 122, 1) 50%,
+    rgba(36, 59, 78, 0.7007002630153624) 100%
+  );
+
+  --secondary-gradient: linear-gradient(
+    90deg,
+    rgba(106, 55, 78, 1) 0%,
+    rgba(138, 40, 84, 1) 50%,
+    rgba(88, 11, 46, 1) 100%
+  );
+
+  background-color: var(--secondary);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+@font-face {
+  font-family: "Belanosima-Regular";
+  src: url("./assets/fonts/Belanosima/Belanosima-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Belanosima-Bold";
+  src: url("./assets/fonts/Belanosima/Belanosima-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Belanosima-Semibold";
+  src: url("./assets/fonts/Belanosima/Belanosima-Semibold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "PoiretOne-Regular";
+  src: url("./assets/fonts/Poiret_One/PoiretOne-Regular.ttf") format("truetype");
+}
+
+#root {
+  width: 100vw;
+  width: 100dvw;
+  height: 100vh;
+  height: 100dvh;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+u {
+  text-underline-offset: 2px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+h2 {
+  font-size: 3rem;
+  font-family: "Belanosima-Regular";
+}
+
+.cta-container {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 1rem 1.5rem;
+  width: fit-content;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  .cta {
+    font-weight: 400;
+    background-clip: text;
+    background-image: var(--primary-gradient);
+    color: transparent;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+      "Open Sans", "Helvetica Neue", sans-serif;
+  }
+
+  &:hover {
+    background-color: rgba(#242424, 0.85);
+    .cta {
+      filter: brightness(1.5);
+    }
+  }
+}
+
+hr {
+  height: 0;
+  color: rgba(255, 255, 255, 0.03);
+}

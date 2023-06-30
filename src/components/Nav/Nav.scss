@@ -1,0 +1,163 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+    width: 90%;
+    margin: auto;
+
+    .logo {
+        font-family: "PoiretOne-Regular";
+        font-size: 2.3rem;
+        position: relative;
+        cursor: pointer;
+        width: 8rem;
+        text-indent: 0.25rem;
+        padding: 2px 5px;
+        border-radius: 5px;
+        display: block;
+        transform-style: preserve-3d;
+
+        i {
+            position: absolute;
+            left: 2.75rem;
+            top: 6px;
+            font-family: "PoiretOne-Regular";
+            font-size: 1.7rem;
+            letter-spacing: 2px;
+            opacity: 1;
+        }
+
+        &:hover,
+        &:active,
+        &:focus-within {
+            background-color: rgba(#242424, 0.85);
+        }
+    }
+
+    #nav-drawer {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        padding: 0.75rem;
+        border-radius: 5px;
+
+        &:hover {
+            background-color: rgba(#242424, 0.85);
+        }
+    }
+}
+
+#drawer-menu {
+    position: absolute;
+    transition: opacity 0.5s ease-in, transform 0.2s ease-in-out;
+    z-index: 1;
+    isolation: isolate;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 0;
+
+    .close-button {
+        $size: 2.5rem;
+        height: $size;
+        aspect-ratio: 1/1;
+        position: absolute;
+        right: 1rem;
+        z-index: 1;
+        top: 1rem;
+        cursor: pointer;
+        isolation: isolate;
+        &::after {
+            content: "";
+            height: $size;
+            aspect-ratio: 1/1;
+            border: 0 solid white;
+            border-left-width: 1px;
+            transform: rotate(45deg);
+            position: absolute;
+            inset: 35%;
+        }
+        &::before {
+            content: "";
+            height: $size;
+            aspect-ratio: 1/1;
+            border: 0 solid white;
+            border-left-width: 1px;
+            transform: rotate(-45deg);
+            position: absolute;
+            inset: -35%;
+            left: 35%;
+        }
+    }
+    .logo {
+        margin-top: 10vh;
+        flex: 1;
+        transform: scale(1.2);
+        font-family: "PoiretOne-Regular";
+        font-size: 2.3rem;
+        position: relative;
+        cursor: pointer;
+        width: 8rem;
+        text-indent: 0.25rem;
+        padding: 2px 5px;
+        border-radius: 5px;
+        display: block;
+        transform-style: preserve-3d;
+
+        i {
+            position: absolute;
+            left: 2.75rem;
+            top: 6px;
+            font-family: "PoiretOne-Regular";
+            font-size: 1.7rem;
+            letter-spacing: 2px;
+            opacity: 1;
+        }
+
+        &:active,
+        &:focus-within {
+            background-color: rgba(#242424, 0.85);
+        }
+    }
+    ul {
+        flex: 3;
+        list-style: none;
+        padding: 0;
+        li {
+            margin: 1rem 0;
+            padding: 0;
+            font-family: "PoiretOne-Regular";
+            font-size: 1.6rem;
+            text-align: center;
+        }
+    }
+}
+
+#drawer-menu[data-menu-hidden="true"] {
+    pointer-events: none;
+    opacity: 0;
+    color: transparent;
+    height: 100vh;
+    width: 100vw;
+    transform: translateY(-100vh);
+}
+
+#drawer-menu[data-menu-hidden="false"] {
+    pointer-events: all;
+    opacity: 1;
+    inset: 0;
+    transform: translateY(0);
+    background-color: rgba(#242424, 0.95);
+    backdrop-filter: blur(5px);
+    &::before {
+        content: "";
+        background: url("../../assets/noise.webp") repeat;
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        mask-image: radial-gradient(rgba(0, 0, 0, 0.47), transparent 72%);
+    }
+}
